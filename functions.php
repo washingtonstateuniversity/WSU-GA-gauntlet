@@ -70,8 +70,7 @@ function get_gauntlet_attr($attr=""){
 }
 
 /**
- * Add analytics tracking to the header of each page load.
- * Temporary until analytics is handled via spine.
+ * set up the site vars in the dom
  */
 add_action('wp_head','set_site_code');
 function set_site_code() {
