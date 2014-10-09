@@ -2,80 +2,9 @@
 Template Name: General GA setup
 */ ?>
 <?php 
-$themePath = dirname( get_bloginfo('stylesheet_url')); // we want the child theme url
+$themePath = get_stylesheet_directory_uri(); // we want the child theme url
 ?>
 <?php get_header(); ?>
-
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"/>
-	<script src="<?=$themePath?>/scripts/jtrack.min.js" type="text/javascript"></script><!-- will enqueue later -->
-	<script type="text/javascript">
-		$=jQuery;
-
-	$.fn.freezeGif = function(){
-		return $.each($(this),function(i,v){
-			var img = this;
-			
-			if($(img).parent('.freezeWrapped').length<=0){
-				$(img).wrap('<div class="freezeWrapped"/>');
-			}
-			var wrapper=$(img).closest('.freezeWrapped');
-			
-			var width = $(img).width(),
-				height = $(img).height(),
-				min_width = $(img).css("min-width"),
-				min_height = $(img).css("min-height"),
-				attr,
-				i = 0;
-			var canvas = $('<canvas/>')
-						.width(width)
-						.height(height);
-			wrapper.css({
-				"width":width,
-				"height":height,
-				"min-width":min_width=="0px"?"auto":min_width,
-				"min-height":min_height=="0px"?"auto":min_height,
-				"position":"relative",
-				"display":"inline-block",
-			});
-			var freeze = function() {
-					wrapper.prepend(canvas);
-					canvas.css({
-						"width":width,
-						"height":height,
-						"min-width":min_width=="0px"?"auto":min_width,
-						"min-height":min_height=="0px"?"auto":min_height,
-					});
-					canvas[0].getContext('2d').drawImage($(img)[0], 0, 0, width, height);
-					for (i = 0; i < $(img)[0].attributes.length; i++) {
-						attr = $(img)[0].attributes[i];
-						if (attr.name !== '"') { // test for invalid attributes
-							canvas.attr(attr.name, attr.value);
-						}
-					}
-					$(img).addClass('frozen');
-					$(img).css({"position":"absolute","display":"none"});
-				},
-				unfreeze = function() {
-					wrapper.find('canvas').remove();
-					$(img).css({"position":"initial","display":"initial"});
-					$(img).removeClass('frozen');
-				};
-			
-			if($(img).is('.frozen')){
-				unfreeze();
-			}else{
-				if (img.complete) {
-					freeze();
-				} else {
-					img.addEventListener('load', freeze, true);
-				}
-			}
-		});
-	}
-		
-		
-		
-    </script>
 	<style>
         .level.boss{display:inline-block;border:1px solid #999;width:100; }
         .level.boss span{display:inline-block;float:left;border:1px solid #999; width:100%;}
