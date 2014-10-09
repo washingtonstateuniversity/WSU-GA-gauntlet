@@ -65,12 +65,21 @@ function get_gauntlet_attr($attr=""){
 	return isset( $gauntlet[$attr] ) ? $gauntlet[$attr] : false;
 }
 
+/**
+ * Add analytics tracking to the header of each page load.
+ * Temporary until analytics is handled via spine.
+ */
+add_action('wp_head','set_site_code');
+function set_site_code() {
+	?><script type="text/javascript">var site_code = "<?=get_gauntlet_attr("code")?>";</script>
+<?php }
+
+
 add_action( 'wp_enqueue_scripts', 'gauntlet_scripts' );
 /**
  * Enqueue child theme Javascript files.
  */
 function gauntlet_scripts() {
-	global $gauntlet;	
 	wp_enqueue_script( 'freezer.js', get_stylesheet_directory_uri() . '/scripts/freezer.js', array( 'jquery' ), false, true );
 	$code = get_gauntlet_attr("code");
 	switch($code){
@@ -93,4 +102,7 @@ function gauntlet_scripts() {
 			//nothing to do
 	}
 	
+	if(file_exists(get_stylesheet_directory() . '/scripts/site-'.$code.'.js')){
+		wp_enqueue_script( 'site-'.$code.'.js', get_stylesheet_directory_uri() . '/scripts/site-'.$code.'.js', array( 'jquery' ), false, true );
+	}
 }
