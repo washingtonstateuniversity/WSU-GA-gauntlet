@@ -32,26 +32,86 @@ function set_gauntlet(){
 		case "ga-2":
 		case "ga-3":
 			$site_group_code="current";
+			$group_ga="current";
+			switch($site_code){
+				case "ga-1":
+					$_ga="UA-55556719-1";
+					break;
+				case "ga-2":
+					$_ga="UA-55556719-2";
+					break;
+				case "ga-3":
+					$_ga="UA-55556719-3";
+					break;
+			}
 			break;
 		case "ga-4":
 		case "ga-5":
 		case "ga-6":
 			$site_group_code="ideal";
+			$group_ga="current";
+			switch($site_code){
+				case "ga-4":
+					$_ga="UA-55556719-4";
+					break;
+				case "ga-5":
+					$_ga="UA-55556719-5";
+					break;
+				case "ga-6":
+					$_ga="UA-55556719-6";
+					break;
+			}
 			break;
 		case "ga-7":
 		case "ga-8":
 		case "ga-9":
 			$site_group_code="controll";
+			$group_ga="current";
+			switch($site_code){
+				case "ga-7":
+					$_ga="UA-55556719-7";
+					break;
+				case "ga-8":
+					$_ga="UA-55556719-8";
+					break;
+				case "ga-9":
+					$_ga="UA-55556719-9";
+					break;
+			}
 			break;
 		case "ga-10":
 		case "ga-11":
 		case "ga-12":
 			$site_group_code="jtrack";
+			$group_ga="current";
+			switch($site_code){
+				case "ga-10":
+					$_ga="UA-55556719-10";
+					break;
+				case "ga-11":
+					$_ga="UA-55556719-11";
+					break;
+				case "ga-12":
+					$_ga="UA-55556719-12";
+					break;
+			}
 			break;
 		case "ga-13":
 		case "ga-14":
 		case "ga-15":
 			$site_group_code="tag_man";
+			$group_ga="current";
+			switch($site_code){
+				case "ga-13":
+					$_ga="UA-55556719-13";
+					break;
+				case "ga-14":
+					$_ga="UA-55556719-14";
+					break;
+				case "ga-15":
+					$_ga="UA-55556719-15";
+					break;
+			}
 			break;
 		default:
 			//nothing to do
@@ -60,7 +120,9 @@ function set_gauntlet(){
 	
 	//leave it as something exentable
 	$GLOBALS['gauntlet'] = array(
-		'code'  => $site_group_code
+		'code'  => $site_group_code,
+		'group_ga'  => $group_ga,
+		'site_ga'  => $_ga
 	);
 }
 

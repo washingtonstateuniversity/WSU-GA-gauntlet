@@ -14,7 +14,7 @@ $(function(){
     $.getJSON('<?=$themePath?>/track/test.txt' , function(data){
         $.jtrack({
             load_analytics:{
-                account:'UA-25040747-1',
+                account:'<?=get_gauntlet_attr("site_ga")?>',
                 options:{
                     onload: false,
                     status_code: 200
