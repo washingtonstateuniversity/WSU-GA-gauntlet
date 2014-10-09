@@ -20,8 +20,12 @@ function extract_subdomains($domain){
 
 add_action( 'wp_loaded', 'set_gauntlet' );
 function set_gauntlet(){
-	$site_code = "ga-12";//extract_subdomains($_SERVER['http_host']);
-	
+	$site_code = "ga-12";
+	$host = $_SERVER['SERVER_NAME'];
+	if (strpos($host,'.dev') != true) {
+		$site_code = extract_subdomains($_SERVER['http_host']);
+	}
+
 	$site_group_code=null;
 	switch($site_code){
 		case "ga-1":
@@ -54,7 +58,7 @@ function set_gauntlet(){
 	}
 	
 	
-	
+	//leave it as something exentable
 	$GLOBALS['gauntlet'] = array(
 		'code'  => $site_group_code
 	);
