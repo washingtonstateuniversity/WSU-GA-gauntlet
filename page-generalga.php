@@ -191,14 +191,6 @@ $(function(){
 		<aside>
 	<a href="#" id="debug">Set debug to <i>true</i></a>
      <h1>Running code</h1>
-    <script type="text/javascript">
-
-    $(document).ready(function(){
-		$.get('<?=$themePath?>/track/test.txt',function(d){$('#jsonfeed').html(d);});
-		eval($('#codeblob').html());
-    });
-    </script>
-
     <pre><code id="codeblob">
 $(function(){
     /*
