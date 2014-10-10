@@ -3,42 +3,42 @@
 		<div class="column one">
 			<h4>Internal/external link tracking</h4>
 			<div class="normal">
-			  <a href="/abcdef">Internal link</a><br/>
-			  <a href="http://www.complex.com">External link</a><br/>
-			  <a href="http://beastieboys.com/" target="_blank">External link in new window</a><br/>
-			  <a href="#">Named link</a><br/>
-			  <a href="javascript:void(0)">JavaScript link</a>
+			  <a href="/abcdef" data-action="click">Internal link</a><br/>
+			  <a href="http://www.complex.com" data-action="click">External link</a><br/>
+			  <a href="http://beastieboys.com/" target="_blank" data-action="click">External link in new window</a><br/>
+			  <a href="#" data-action="click">Named link</a><br/>
+			  <a href="javascript:void(0)" data-action="click">JavaScript link</a>
 			</div>
 			<h4>Configured link tracking</h4>
 			<h5>Targeting</h5>
 			<h6>_blank</h6>
 			<div class="normal">
-			  <a href="/abcdef" target="_blank">Internal link <code>target="_blank"</code></a><br/>
-			  <a href="http://www.complex.com" target="_blank">External link <code>target="_blank"</code></a><br/>
+			  <a href="/abcdef" target="_blank" data-action="click">Internal link <code>target="_blank"</code></a><br/>
+			  <a href="http://www.complex.com" target="_blank" data-action="click">External link <code>target="_blank"</code></a><br/>
 			</div>
 			<h6>_self</h6>
 			<div class="normal">
-			  <a href="/abcdef" target="_self">Internal link <code>target="_blank"</code></a><br/>
-			  <a href="http://www.complex.com" target="_self">External link <code>target="_blank"</code></a><br/>
+			  <a href="/abcdef" target="_self" data-action="click">Internal link <code>target="_blank"</code></a><br/>
+			  <a href="http://www.complex.com" target="_self" data-action="click">External link <code>target="_blank"</code></a><br/>
 			</div>
 		</div>
 		<div class="column two">
 			<h4>Metadata extraction using callbacks</h4>
 			<div class="sidebar">
-			  <a href="http://www.sidebar.com">Sidebar link</a>
+			  <a href="http://www.sidebar.com" data-action="click">Sidebar link</a>
 			</div>
 			<div class="footer">
-			  <a href="http://www.footer.com">Footer link</a>
+			  <a href="http://www.footer.com" data-action="click">Footer link</a>
 			</div>
 			<div class="complex">
-			  <a href="http://www.complex.com" class="complex">Complex link</a>
+			  <a href="http://www.complex.com" class="complex" data-action="click">Complex link</a>
 			</div>
 		</div>
 	</div>
     
     <h3>Mouse over event tracking</h3>
-    <a href="http://www.google.com" id="hover">Hover over me</a>
-	<a href="http://www.google.com" id="touch">Touch me</a>
+    <a href="http://www.google.com" id="hover" data-action="mouseover">Hover over me</a>
+	<a href="http://www.google.com" id="touch"  data-action="touchstart">Touch me</a>
     
     <div>
 		<hr/><hr/>
@@ -47,12 +47,12 @@
 		<hr/>
 		<div class="row thirds gutter narrow pad-bottom short"> 
 			 <div class="column one">
-				<a href="http://i.imgur.com/dsDO3.gif" class="level boss click one">
+				<a href="http://i.imgur.com/dsDO3.gif" class="level boss click one"  data-action="click">
 					<span>One Click EX:</span>
 					<img src="http://i.imgur.com/dsDO3.gif" width="100%"/>
 				 </a>
 			</div>
-			<div class="column two">
+			<div class="column two"  data-action="dblclick">
 				<a href=" http://i.imgur.com/YeXDp.gif" class="level boss click two">
 					<span>DBL click EX:</span>
 					<img src="http://i.imgur.com/YeXDp.gif" width="100%"/>

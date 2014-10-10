@@ -17,7 +17,7 @@ code,pre{font-size: .85em; white-space: pre-wrap; white-space: -moz-pre-wrap; wh
 .inlinecode{display:inline-block;}
 
 
-#instructions{position:fixed; top:75px; right:-267px; width:257px; border-radius:5px 0px 0px 5px;z-index: 999999;padding:10px;box-shadow: 2px 0 5px;}
+#instructions{position:fixed; top:35px; right:-267px; width:257px; border-radius:5px 0px 0px 5px;z-index: 999999;padding:10px;box-shadow: 2px 0 5px;}
 #instructions_tab{position:absolute; top:15px; left:-35px; width:35px; height:35px; border-radius:5px 0px 0px 5px; }
 #instructions_tab:hover{ opacity:.75;}
 #instructions_tab i{ margin:8px 8px 8px 11px; font-size:1.25em;}
