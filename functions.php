@@ -20,7 +20,7 @@ function extract_subdomains($domain){
 add_action( 'wp_loaded', 'set_gauntlet' );
 function set_gauntlet(){
 	$site_code = "ga-1";
-	$host = $_SERVER['SERVER_NAME'];
+	$host = $_SERVER['HTTP_HOST'];
 	if (strpos($host,'.dev') != true) {
 		$site_code = str_replace('.web','',extract_subdomains($host));
 	}
