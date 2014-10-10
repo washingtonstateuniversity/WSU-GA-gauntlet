@@ -119,9 +119,10 @@ function set_gauntlet(){
 	
 	//leave it as something exentable
 	$GLOBALS['gauntlet'] = array(
-		'code'  => $site_group_code,
-		'group_ga'  => $group_ga,
-		'site_ga'  => $_ga
+		'base_code'		=> $site_code,
+		'code'			=> $site_group_code,
+		'group_ga'		=> $group_ga,
+		'site_ga'		=> $_ga
 	);
 }
 
@@ -139,6 +140,7 @@ function set_site_code() {
 
 <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"/>
 <script type="text/javascript">
+	var base_code = "<?=get_gauntlet_attr("base_code")?>";
 	var site_code = "<?=get_gauntlet_attr("code")?>";
 	var themePath = "<?=get_stylesheet_directory_uri()?>";
 	$=jQuery;
