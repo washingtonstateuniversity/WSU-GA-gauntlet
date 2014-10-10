@@ -1,6 +1,6 @@
 (function($){
 	$(function(){
-		$('main a').on('click',function(e){ // we are going to globally trun on travel to other links
+		$('main a,main input[type="submit"],button').on('click',function(e){ // we are going to globally trun on travel to other links
 			e.preventDefault();
 		});
 		$('#instructions_tab').on('click',function(e){
