@@ -6,7 +6,8 @@ $themePath = get_stylesheet_directory_uri(); // we want the child theme url
 $code = get_gauntlet_attr("code");
 ?>
 <?php get_header(); ?>
-<main>	
+<main>
+	<?php get_template_part('parts/globals/instructions'); ?>
 	<section class="row side-right gutter pad-bottom tall">
 		<div class="column one">
 			<?php get_template_part('parts/headers/'.$code); ?>

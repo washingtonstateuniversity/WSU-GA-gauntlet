@@ -135,7 +135,10 @@ function get_gauntlet_attr($attr=""){
  */
 add_action('wp_head','set_site_code');
 function set_site_code() {
-	?><script type="text/javascript">
+	?>
+
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"/>
+<script type="text/javascript">
 	var site_code = "<?=get_gauntlet_attr("code")?>";
 	var themePath = "<?=get_stylesheet_directory_uri()?>";
 	$=jQuery;
@@ -188,7 +191,7 @@ function gauntlet_scripts() {
 		default:
 			//nothing to do
 	}
-	
+	wp_enqueue_script( 'site.js', get_stylesheet_directory_uri() . '/scripts/site.js', array( 'jquery' ), false, true );
 	if(file_exists(get_stylesheet_directory() . '/scripts/site-'.$code.'.js')){
 		wp_enqueue_script( 'site-'.$code.'.js', get_stylesheet_directory_uri() . '/scripts/site-'.$code.'.js', array( 'jquery' ), false, true );
 	}

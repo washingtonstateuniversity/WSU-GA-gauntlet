@@ -15,3 +15,9 @@
 .level.boss img{min-width: 100%;}
 code,pre{font-size: .85em; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap;white-space: -o-pre-wrap; word-wrap: break-word;line-height: .95em;font-family: monospace;color: rgb(30,10,10);}
 .inlinecode{display:inline-block;}
+
+
+#instructions{position:absolute; top:75px; right:-267px; width:257px; border-radius:5px 0px 0px 5px;z-index: 999999;padding:10px;box-shadow: 2px 0 5px;}
+#instructions_tab{position:absolute; top:15px; left:-35px; width:35px; height:35px; border-radius:5px 0px 0px 5px; }
+#instructions_tab:hover{ opacity:.75;}
+#instructions_tab i{ margin:8px 8px 8px 11px; font-size:1.25em;}

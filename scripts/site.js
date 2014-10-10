@@ -1,0 +1,20 @@
+(function($){
+	$(function(){
+		$('#instructions_tab').on('click',function(e){
+			e.preventDefault();
+			if($('#instructions').is('.open')){
+				$('#instructions').animate({
+					right:"-267px"
+				},500,function(){
+					$(this).removeClass('open');
+				});	
+			}else{
+				$('#instructions').animate({
+					right:"0px"
+				},500,function(){
+					$(this).addClass('open');
+				});	
+			}
+		});	
+	});
+})(jQuery);
