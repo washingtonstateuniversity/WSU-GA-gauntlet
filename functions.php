@@ -1,5 +1,6 @@
 <?php
 $gauntlet=null;
+
 function extract_domain($domain){
     if(preg_match("/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i", $domain, $matches)){
         return $matches['domain'];
@@ -16,11 +17,9 @@ function extract_subdomains($domain){
     return $subdomains;
 }
 
-
-
 add_action( 'wp_loaded', 'set_gauntlet' );
 function set_gauntlet(){
-	$site_code = "ga-12";
+	$site_code = "ga-1";
 	$host = $_SERVER['SERVER_NAME'];
 	if (strpos($host,'.dev') != true) {
 		$site_code = extract_subdomains($_SERVER['http_host']);
@@ -142,6 +141,25 @@ function set_site_code() {
 	$=jQuery;
 </script>
 <?php }
+
+/**
+ * Set up any head blocks if they exist
+ */
+add_action('wp_head','set_head_block');
+function set_head_block() {
+	get_template_part('parts/head/'.get_gauntlet_attr("code"));
+}
+
+/**
+ * Set up any footer blocks if they exist
+ */
+add_action('wp_footer','set_footer_block');
+function set_footer_block() {
+	get_template_part('parts/footer/'.get_gauntlet_attr("code"));
+}
+
+
+
 
 
 add_action( 'wp_enqueue_scripts', 'gauntlet_scripts' );
