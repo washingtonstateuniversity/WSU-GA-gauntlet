@@ -33,6 +33,22 @@
 			<div class="complex">
 			  <a href="http://www.complex.com" class="complex" data-action="click">Complex link</a>
 			</div>
+			
+			<h4>Form tracking</h4>
+			<div class="normal">
+			  <form>
+					<label>text<input type="text" name="text-test"/></label><br/>
+					<label>date<input type="date" name="date-test"/></label><br/>
+					<label>tel<input type="tel" name="tel-test"/></label><br/>
+					<label>checkbox<input type="checkbox" name="checkbox-test"/></label><br/>
+					<label>radio 1<input type="radio" name="radio-test"/></label><label>radio 2<input type="radio" name="radio-test"/></label><br/>
+					<label>select<select name="select-test"><option value="one">one</option><option value="two">two</option><option value="three">three</option></select></label><br/>
+					<label>textarea<textarea name="textarea-test"></textarea></label><br/>
+					<label>button<button name="button-test">Test button</button></label><br/>
+					<label>submit<input type="submit" name="submit-test" value="Test submit"/></label><br/>
+			  </form>
+			</div>
+			
 		</div>
 	</div>
     
