@@ -22,10 +22,12 @@ function set_gauntlet(){
 	$site_code = "ga-1";
 	$host = $_SERVER['SERVER_NAME'];
 	if (strpos($host,'.dev') != true) {
-		$site_code = str_replace('.web','',extract_subdomains($_SERVER['http_host']));
+		$site_code = str_replace('.web','',extract_subdomains($host));
 	}
 
 	$site_group_code=null;
+	$group_ga=null;
+	$_ga=null;
 	switch($site_code){
 		case "ga-1":
 		case "ga-2":
