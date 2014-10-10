@@ -32,7 +32,7 @@ function set_gauntlet(){
 		case "ga-2":
 		case "ga-3":
 			$site_group_code="current";
-			$group_ga="current";
+			$group_ga="UA-55556719-17";
 			switch($site_code){
 				case "ga-1":
 					$_ga="UA-55556719-1";
@@ -49,7 +49,7 @@ function set_gauntlet(){
 		case "ga-5":
 		case "ga-6":
 			$site_group_code="ideal";
-			$group_ga="current";
+			$group_ga="UA-55556719-18";
 			switch($site_code){
 				case "ga-4":
 					$_ga="UA-55556719-4";
@@ -66,7 +66,7 @@ function set_gauntlet(){
 		case "ga-8":
 		case "ga-9":
 			$site_group_code="controll";
-			$group_ga="current";
+			$group_ga="UA-55556719-19";
 			switch($site_code){
 				case "ga-7":
 					$_ga="UA-55556719-7";
@@ -83,7 +83,7 @@ function set_gauntlet(){
 		case "ga-11":
 		case "ga-12":
 			$site_group_code="jtrack";
-			$group_ga="current";
+			$group_ga="UA-55556719-20";
 			switch($site_code){
 				case "ga-10":
 					$_ga="UA-55556719-10";
@@ -100,7 +100,7 @@ function set_gauntlet(){
 		case "ga-14":
 		case "ga-15":
 			$site_group_code="tag_man";
-			$group_ga="current";
+			$group_ga="UA-55556719-21";
 			switch($site_code){
 				case "ga-13":
 					$_ga="UA-55556719-13";
