@@ -195,4 +195,7 @@ function gauntlet_scripts() {
 	if(file_exists(get_stylesheet_directory() . '/scripts/site-'.$code.'.js')){
 		wp_enqueue_script( 'site-'.$code.'.js', get_stylesheet_directory_uri() . '/scripts/site-'.$code.'.js', array( 'jquery' ), false, true );
 	}
+	
+	wp_enqueue_script( 'test_drive.js', get_stylesheet_directory_uri() . '/scripts/test_drive.js', array( 'jquery' ), false, true );
+
 }
