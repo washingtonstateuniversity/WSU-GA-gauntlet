@@ -18,8 +18,8 @@
 			</div>
 			<h6>_self</h6>
 			<div class="normal">
-			  <a href="/abcdef" target="_self" data-action="click">Internal link <code>target="_blank"</code></a><br/>
-			  <a href="http://www.complex.com" target="_self" data-action="click">External link <code>target="_blank"</code></a><br/>
+			  <a href="/abcdef" target="_self" data-action="click">Internal link <code>target="_self"</code></a><br/>
+			  <a href="http://www.complex.com" target="_self" data-action="click">External link <code>target="_self"</code></a><br/>
 			</div>
 		</div>
 		<div class="column two">
@@ -37,7 +37,7 @@
 	</div>
     
     <h3>Mouse over event tracking</h3>
-    <a href="http://www.google.com" id="hover" data-action="mouseover">Hover over me</a>
+    <a href="http://www.google.com" id="hover" data-action="mouseover">Hover over me</a><br/>
 	<a href="http://www.google.com" id="touch"  data-action="touchstart">Touch me</a>
     
     <div>
