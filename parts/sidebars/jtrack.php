@@ -25,6 +25,15 @@ $(function(){
                 settings:{
                     namedSpace:'siteScope',
                 }
+            },{
+                id:'UA-52133513-1',
+                settings:{
+                    namedSpace:'wp_platform',
+					dimension:[
+						{'name':'dimension1','value':'Front End'},
+						{'name':'dimension2','value':'Not Authenticated'},
+					]
+                }
             }]
         },
         events:'<?=get_site_url()?>?ajax&load=test'
