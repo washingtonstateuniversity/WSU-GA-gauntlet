@@ -14,6 +14,9 @@ $code = get_gauntlet_attr("code");
 			<?php get_template_part('parts/descriptions/'.$code); ?>
 			<?php get_template_part('parts/test_blocks/general_links'); ?>
 			<?php get_template_part('parts/content/'.$code); ?>
+			<?php get_template_part('parts/test_blocks/gerneral_social_links'); ?>
+			
+			
 			<?php get_template_part('parts/test_blocks/extended_links'); ?>
 		</div><!--/column-->
 		<div class="column two">

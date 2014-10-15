@@ -133,6 +133,32 @@ function get_gauntlet_attr($attr=""){
 	return isset( $gauntlet[$attr] ) ? $gauntlet[$attr] : false;
 }
 
+/* build the gauntlet nav */
+add_filter( 'wp_nav_menu_items', 'gauntlet_nav');
+function gauntlet_nav( $items, $args ) {
+	var_dump($args->theme_location);die();
+    if ($args->theme_location == 'primary') {
+		$gaut_map= array(
+			"current"	=>array("ga-1","ga-2","ga-3"),
+			"ideal"		=>array("ga-4","ga-5","ga-6"),
+			"controll"	=>array("ga-7","ga-8","ga-9"),
+			"jtrack"	=>array("ga-10","ga-11","ga-12"),
+			"tag_man"	=>array("ga-13","ga-14","ga-15")
+		);
+		foreach($gaut_map as $key=>$items){
+			$child_html="";
+			foreach($items as $item){
+				$child_html .='<li><a href="http://'.$items.'.web.wsu.edu">'.$items.'</a></li>';
+			}
+        	$items .= '<li class="parent"><a href="#">'.$key.'</a><ul class="sub-menu">'.$child_html.'</ul></li>';
+		}
+    }
+    return $items;
+}
+
+
+
+
 /**
  * set up the site vars in the dom
  */
