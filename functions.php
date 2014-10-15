@@ -17,9 +17,20 @@ function extract_subdomains($domain){
     return $subdomains;
 }
 
+add_action( 'init', 'wsu_ga_remove_analytics' );
+function wsu_ga_remove_analytics() {
+	global $wsu_analytics;
+	remove_action( 'wp_enqueue_scripts', array( $wsu_analytics, 'enqueue_scripts' ) );
+	remove_action( 'admin_init', array( $wsu_analytics, 'display_settings' ) );
+	remove_action( 'wp_footer', array( $wsu_analytics, 'global_tracker' ), 999 );
+	remove_action( 'admin_footer', array( $wsu_analytics, 'global_tracker' ), 999 );
+}
+
+
+
 add_action( 'wp_loaded', 'set_gauntlet' );
 function set_gauntlet(){
-	$site_code = "ga-1";
+	$site_code = "ga-11";
 	$host = $_SERVER['HTTP_HOST'];
 	if (strpos($host,'.dev') != true) {
 		$site_code = str_replace('.web','',extract_subdomains($host));
