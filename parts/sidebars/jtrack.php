@@ -11,19 +11,26 @@ $(function(){
     example of a json feed controlling the triggers since this is something that is cached this is a  super easy way to control may distrobutions with out having users that don't know, have to make edits
     */
 	$.jtrack.defaults.debug = false;
-    $.getJSON('<?=$themePath?>/track/test.txt' , function(data){
-        $.jtrack({
-            load_analytics:{
-                account:'<?=get_gauntlet_attr("site_ga")?>',
-                options:{
-                    onload: false,
-                    status_code: 200
+
+    $.jtrack({
+        analytics:{
+            accounts:[{
+                id:'<?=get_gauntlet_attr("group_ga")?>',
+                settings:{
+                    namedSpace:'WSUTestGlobal',
+					autoLinkDomains:['wsu.edu'],
                 }
-            },
-            // this can be hard codded here or set do be feed in like so
-            trackevents:data
-        });
+            },{
+                id:'<?=get_gauntlet_attr("site_ga")?>',
+                settings:{
+                    namedSpace:'WSUTestGlobal',
+                }
+            }]
+        },
+        events:'<?=$themePath?>/track/load.php?load=test'
     });
+	
+	
 	$('a#debug').on('click',function(){
 		var newstate = $.jtrack.defaults.debug==true?false:true;
 		$.jtrack.defaults.debug = newstate;
