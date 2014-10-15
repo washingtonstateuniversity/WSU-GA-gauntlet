@@ -144,12 +144,19 @@ function gauntlet_nav( $items ) {
 		"tag_man"	=>array("ga-13","ga-14","ga-15")
 	);
 	
+	$activeCode = get_gauntlet_attr("base_code");
 	foreach($gaut_map as $key=>$children){
 		$child_html="";
+		$activeParent = false;
+		
 		foreach($children as $child){
-			$child_html .='<li><a href="http://'.$child.'.web.wsu.edu">'.$child.'</a></li>';
+			if( $activeCode == $child ){
+				$items = str_replace('class="current','class="',$items);
+				$activeParent = true;
+			}
+			$child_html .='<li class="'.($activeCode == $child ? 'active' : '' ).'"><a href="http://'.$child.'.web.wsu.edu">'.$child.'</a></li>';
 		}
-		$items .= '<li class="parent"><a href="#">'.$key.'</a><ul class="sub-menu">'.$child_html.'</ul></li>';
+		$items .= '<li class="parent '.($activeParent? 'active' : '' ).'"><a href="#">'.$key.' state</a><ul class="sub-menu">'.$child_html.'</ul></li>';
 	}
     return $items;
 }
