@@ -23,7 +23,7 @@ $(function(){
             },{
                 id:'<?=get_gauntlet_attr("site_ga")?>',
                 settings:{
-                    namedSpace:'WSUTestGlobal',
+                    namedSpace:'siteScope',
                 }
             }]
         },
