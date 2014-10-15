@@ -131,7 +131,7 @@ function set_gauntlet(){
 add_action( 'wp_loaded', 'send_test_rules' );
 function send_test_rules(){
 	$ajax=isset($_GET['ajax']);
-		if($ajax){
+	if($ajax){
 		$callback=$_GET['callback'];
 		$load = get_stylesheet_directory().'/track/'.$_GET['load'];
 		
