@@ -128,6 +128,23 @@ function set_gauntlet(){
 	);
 }
 
+add_action( 'wp_loaded', 'send_test_rules' );
+function send_test_rules(){
+	$ajax=isset($_GET['ajax']);
+		if($ajax){
+		$callback=$_GET['callback'];
+		$load = get_stylesheet_directory().'/track/'.$_GET['load'];
+		
+		$data='{}';
+		if(file_exists($load.'.txt')){
+			$data = file_get_contents($load.'.txt');
+		}
+		echo $callback . '(' . $data . ')';die();
+	}
+}
+
+
+
 function get_gauntlet_attr($attr=""){
 	global $gauntlet;
 	return isset( $gauntlet[$attr] ) ? $gauntlet[$attr] : false;

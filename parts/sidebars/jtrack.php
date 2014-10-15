@@ -27,7 +27,7 @@ $(function(){
                 }
             }]
         },
-        events:'<?=$themePath?>/track/load.php?load=test'
+        events:'<?=get_site_url()?>?ajax&load=test&callback=foo'
     });
 	
 	
