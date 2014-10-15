@@ -30,8 +30,8 @@ $(function(){
                 settings:{
                     namedSpace:'wp_platform',
 					dimension:[
-						{'name':'dimension1','value':'Front End'},
-						{'name':'dimension2','value':'Not Authenticated'},
+						{'name':'dimension1','val':'Front End'},
+						{'name':'dimension2','val':'Not Authenticated'},
 					]
                 }
             }]
