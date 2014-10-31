@@ -1,8 +1,27 @@
 // JavaScript Document
 var targs={};
 $(function(){
+	
+	function getTo(el){
+	  var elOffset = el.offset().top;
+	  var elHeight = el.height();
+	  var windowHeight = $(window).height();
+	  var offset;
+	
+	  if (elHeight < windowHeight) {
+		offset = elOffset - ((windowHeight / 2) - (elHeight / 2));
+	  }
+	  else {
+		offset = elOffset;
+	  }
+	  var speed = 500;
+	  $('html, body').animate({scrollTop:offset}, speed);	
+	}
+	
+	
+	
 	$.each($('.test_unit'), function(){
-		$.each($('a,input,.unit_item',this), function(){
+		$.each($('a,input,button,.unit_item',this), function(){
 			var tar=$(this);
 			tar.uniqueId();
 			var obj=[];
@@ -12,6 +31,10 @@ $(function(){
 				type="a";
 			}
 			if(tar.is("input")){
+				action="change";
+				type="input";
+			}
+			if(tar.is("button")){
 				action="change";
 				type="input";
 			}
@@ -35,10 +58,16 @@ $(function(){
 				var action=v.action;//+'.tester';
 				$('#'+i).on(action,function(event){
 					event.preventDefault();
+					getTo($(this));
 					var color=$(this).css('color');
-					console.log('trigged item::'+i)
-					$(this).animate({color:"red"},"slow",function(){
-						$(this).animate({color:color},"slow");
+					var bkcolor=$(this).css('background-color');
+					console.log('trigged item::'+i);
+					if($('#console_log').is(':not(:visible)')){
+						$('#console_log').show();	
+					}
+					$('#console_log').prepend('<span><i class="fa fa-shield fa-rotate-270"></i>trigged item::'+i+'</span>');
+					$(this).animate({color:"#f6861f !important","background-color":"#00a5bd !important"},"slow",function(){
+						$(this).animate({color:color,"background-color":bkcolor},"slow");
 					});
 					
 				}).trigger(action).off(action);

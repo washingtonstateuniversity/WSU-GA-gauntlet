@@ -28,7 +28,17 @@ code,pre{font-size: .85em; white-space: pre-wrap; white-space: -moz-pre-wrap; wh
 #automation_tab i{ margin:8px 8px 8px 0px; font-size:1.25em;}
 #automation_tab i.fa-cog{ margin:0px; font-size:1em;}
 
-
+#console_log{position: absolute;
+top: 100%;
+right: 23px;
+width: 195px;
+max-height: 330px;
+overflow-x: hidden;
+border-radius:  0px 5px 0px 5px;
+padding: 5px 10px;
+box-shadow: 2px 0 5px;}
+#console_log span{display:block; }
+#console_log span i{font-size:1em; margin-right:15px;}
 /*
 <?php if($this->getDirection() == 'left'):?>
 .bt-login-social{margin:0 5px 0 0;}

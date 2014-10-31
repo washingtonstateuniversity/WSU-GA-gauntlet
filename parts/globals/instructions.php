@@ -15,4 +15,5 @@
 	<h3>Automated<br/>Testing</h3>
 	<p>Settings for automation....</p>
 	<input type="submit" id="run_test" value="Run Test"/>
+	<div id="console_log" class="gray-er-back accent"></div>
 </div>
