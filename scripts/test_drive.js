@@ -29,6 +29,7 @@ $(function(){
 	
 	$('#run_test').on('click',function(e){
 		e.preventDefault();
+		var k=0;
 		$.each(targs, function(i,v){
 			setTimeout(function(){
 				var action=v.action;//+'.tester';
@@ -39,8 +40,10 @@ $(function(){
 					$(this).animate({color:"red"},"slow",function(){
 						$(this).animate({color:color},"slow");
 					});
+					
 				}).trigger(action).off(action);
-			},500 + ( i * 500 ));
+			},500 + ( k * 500 ));
+			k++;
 		});
 	});
 	
