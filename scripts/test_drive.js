@@ -26,4 +26,25 @@ $(function(){
 			tagrs = $.extend(targs,obj);
 		});
 	});
+	
+	$('#run_test').on('click',function(e){
+		e.preventDefault();
+		$.each(targs, function(i,v){
+			setTimeout(function(){
+				var action=v.action;//+'.tester';
+				$('#'+i).on(action,function(event){
+					event.preventDefault();
+					var color=$(this).css('color');
+					console.log('trigged item::'+i)
+					$(this).animate({color:"red"},"slow",function(){
+						$(this).animate({color:color},"slow");
+					});
+				}).trigger(action).off(action);
+			},500 + ( i * 500 ));
+		});
+	});
+	
+	
+	
+	
 });
