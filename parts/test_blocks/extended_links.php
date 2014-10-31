@@ -1,3 +1,4 @@
+<div class="test_unit">
 <hr/>
 	<h2>Extended test</h2>
 <p><strong>Internal  links</strong> <br />
@@ -53,3 +54,4 @@
 	
 	
 	
+</div>
