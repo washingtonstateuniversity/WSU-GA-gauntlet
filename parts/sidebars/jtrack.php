@@ -56,11 +56,6 @@ $(function(){
         }
     });*/
 
-
-    //this sets the examples from doing anything but the google stuff
-    $('a').on('click',function(e){
-        e.preventDefault();
-    });
 });
     </code></pre>
         <h3>Json Feed <em>(loaded from track/test.txt)</em></h3>
