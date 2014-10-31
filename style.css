@@ -22,8 +22,11 @@ code,pre{font-size: .85em; white-space: pre-wrap; white-space: -moz-pre-wrap; wh
 #instructions_tab:hover{ opacity:.75;}
 #instructions_tab i{ margin:8px 8px 8px 11px; font-size:1.25em;}
 
-
-
+#automation{position:fixed; top:35px; right:-267px; width:257px; border-radius:5px 0px 0px 5px;z-index: 999998;padding:10px;box-shadow: 2px 0 5px;}
+#automation_tab{position:absolute; top:55px; left:-30px; width:30px; height:30px; border-radius:5px 0px 0px 5px; }
+#automation_tab:hover{ opacity:.75;}
+#automation_tab i{ margin:8px 8px 8px 0px; font-size:1.25em;}
+#automation_tab i.fa-cog{ margin:0px; font-size:1em;}
 
 
 /*

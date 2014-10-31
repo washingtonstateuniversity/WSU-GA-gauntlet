@@ -18,6 +18,23 @@
 					$(this).addClass('open');
 				});	
 			}
+		});
+		
+		$('#automation_tab').on('click',function(e){
+			e.preventDefault();
+			if($('#automation').is('.open')){
+				$('#automation').animate({
+					right:"-267px"
+				},500,function(){
+					$(this).removeClass('open');
+				});	
+			}else{
+				$('#automation').animate({
+					right:"0px"
+				},500,function(){
+					$(this).addClass('open');
+				});	
+			}
 		});	
 	});
 })(jQuery);

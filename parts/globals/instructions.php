@@ -6,3 +6,12 @@
 	<h5>Help/issues</h5>
 	<p>You may ask questions or raise issues about the gauntlet here at the github repo of <a href="https://github.com/washingtonstateuniversity/WSU-GA-gauntlet" target="_blank">WSU-GA-gauntlet</a>.  You may also contact the current test maintainer, <a href="mailto:jeremy.bass@wsu.edu?subject=WSU-GA-gauntlet%20question" target="_blank">Jeremy Bass</a> with any questions.  Thank you for your interest and participation.</p>
 </div>
+
+<div id="automation" class="yellow-er-back accent"><a href="#" id="automation_tab" class="yellow-er-back accent gray-dark-text"><span class="fa-stack fa-md">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-cog fa-stack-1x fa-inverse"></i>
+</span>
+</a>
+	<h3>Automated<br/>Testing</h3>
+	<p>Settings for automation....</p>
+</div>
