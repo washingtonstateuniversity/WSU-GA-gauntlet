@@ -53,7 +53,11 @@ $(function(){
 	$('#run_test').on('click',function(e){
 		e.preventDefault();
 		var k=0;
+		
+		$('#console_log').prepend('<span><i class="fa fa-shield yellow-er-text"></i>Starting Test for '+(Object.keys(targs).length)+' items</span>');	
+		$('#console_log').prepend('<span><i class="fa fa-shield fa-rotate-270 orange-er-text"></i>Triggering:</span>');	
 		$.each(targs, function(i,v){
+			var idx=k;
 			setTimeout(function(){
 				var action=v.action;//+'.tester';
 				$('#'+i).on(action,function(event){
@@ -65,11 +69,13 @@ $(function(){
 					if($('#console_log').is(':not(:visible)')){
 						$('#console_log').show();	
 					}
-					$('#console_log').prepend('<span><i class="fa fa-shield fa-rotate-270"></i>trigged item::'+i+'</span>');
+					$('#console_log').prepend('<span><i class="fa fa-shield fa-rotate-270 green-er-text"></i>#'+i+' <em>( '+action+' )</em></span>');
 					$(this).animate({color:"#f6861f !important","background-color":"#00a5bd !important"},"slow",function(){
 						$(this).animate({color:color,"background-color":bkcolor},"slow");
 					});
-					
+					if( (Object.keys(targs).length-1) == idx ){
+						$('#console_log').prepend('<span><i class="fa fa-shield blue-er-text"></i>Finished Test</span>');	
+					}
 				}).trigger(action).off(action);
 			},500 + ( k * 500 ));
 			k++;
