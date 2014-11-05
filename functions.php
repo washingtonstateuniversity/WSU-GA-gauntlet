@@ -173,6 +173,7 @@ function gauntlet_nav( $items ) {
 	);
 	
 	$activeCode = get_gauntlet_attr("base_code");
+	$items .= '<li class=""><a href="//ga.wp.wsu.edu/">Google Analytics Testing</a></li>';
 	foreach($gaut_map as $key=>$children){
 		$child_html="";
 		$activeParent = false;
