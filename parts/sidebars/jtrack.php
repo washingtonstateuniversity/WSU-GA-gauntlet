@@ -10,7 +10,7 @@ $(function(){
     /*
     example of a json feed controlling the triggers since this is something that is cached this is a  super easy way to control may distrobutions with out having users that don't know, have to make edits
     */
-    $.jtrack.defaults.debug = false;
+    $.jtrack.defaults.debug = true;
     $.jtrack({
         analytics:{
             ga_name:"_wsuGA",
