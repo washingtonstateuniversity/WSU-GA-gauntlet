@@ -18,7 +18,6 @@ $(function(){
                 id:'<?=get_gauntlet_attr("group_ga")?>',
                 settings:{
                     namedSpace:'WSUTestGlobal',
-                    autoLinkDomains:['wsu.edu'],
                     cookieDomain:".wsu.edu",
                     dimension:[
                         {'name':'dimension1','val': window.location.protocol }
