@@ -247,7 +247,7 @@ function gauntlet_scripts() {
 			// nothing yet
 			break;
 		case "jtrack":
-			wp_enqueue_script( 'jtrack.min.js', '//repo.wsu.edu/jtrack/1/jtrack.min.js', array( 'jquery' ), false, true );
+			wp_enqueue_script( 'jtrack.min.js', '//repo.wsu.edu/jtrack/develop/jtrack.min.js', array( 'jquery' ), false, true );
 			break;
 		case "tag_man":
 			// nothing yet
